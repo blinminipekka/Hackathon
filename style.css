@@ -1,32 +1,227 @@
-#chatbot-widget {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-body{
+/* General Body Styles */
+body {
     background-color: rgb(33, 33, 33);
     color: rgb(238, 84, 51);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;  /* Aligns items at the top */
+    height: 100vh; /* Ensures the body takes up the full height of the viewport */
+    position: relative;
+    overflow: hidden;  /* Ensures nothing expands outside the viewport */
 }
-
 #firstdiv {
     background-color: rgb(45, 45, 45);
     width: 100%;
     height: 130px;
+    display: flex;
+    justify-content: center;  /* Horizontally centers content */
+    align-items: center;      /* Vertically centers content within the div */
+    flex-direction: column;   /* Aligns <h1> and <p> vertically */
+    text-align: center;       /* Centers text horizontally inside the elements */
 }
 
-#firstdiv h1{ 
-    padding-left: 500px;
-    padding-bottom: 100px;
-    display: flex;
-    width: 30%;
+#firstdiv h1 {
+    margin: 0;
+    font-size: 2rem;
 }
 
-#firstdiv p{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding-top: 49px;
-    padding-left: 30px;
-    display: flex;
-    width: 30%;
+#firstdiv p {
+    padding-top: 10px;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Sprite Styling */
+/* Sprite Styling */
+.sprite {
+    position: absolute;
+    top: 50%;  /* Initially at the center */
+    left: 50%; /* Initially at the center */
+    transform: translate(-50%, -50%);  /* Offsets the positioning to truly center */
+    z-index: 10000000001;  /* Ensures the sprite is above the rectangles */
+    width: 150px;  /* Set sprite width (adjust size as necessary) */
+    height: 150px; /* Set sprite height (adjust size as necessary) */
+}
+
+
+/* Rectangle Styles (same as before) */
+.rectangle {
+    position: absolute;
+    background-color: darkgray;
+    opacity: 0.9;
+    z-index: 10000000000;  /* Ensures rectangles are on top of other elements */
+    animation: moveRectangle 3s forwards;  /* Smooth animation */
+}
+
+/* Keyframes for rectangle animation (same as before) */
+@keyframes moveRectangle {
+    0% {
+        width: 50px;
+        height: 50px;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+    100% {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}
+
+/* Specific directions for each rectangle (same as before) */
+#rect1 {
+    animation: moveRectangle1 3s forwards;
+}
+
+@keyframes moveRectangle1 {
+    0% {
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+    }
+    100% {
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+#rect2 {
+    animation: moveRectangle2 3s forwards;
+}
+
+@keyframes moveRectangle2 {
+    0% {
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+    }
+    100% {
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+#rect3 {
+    animation: moveRectangle3 3s forwards;
+}
+
+@keyframes moveRectangle3 {
+    0% {
+        top: 100vh;
+        left: 0;
+        width: 50px;
+        height: 50px;
+    }
+    100% {
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+#rect4 {
+    animation: moveRectangle4 3s forwards;
+}
+
+@keyframes moveRectangle4 {
+    0% {
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+    }
+    100% {
+        top: 100vh;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+#rect5 {
+    animation: moveRectangle5 3s forwards;
+}
+
+@keyframes moveRectangle5 {
+    0% {
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+    }
+    100% {
+        top: 0;
+        left: 100vw;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+#rect6 {
+    animation: moveRectangle6 3s forwards;
+}
+
+@keyframes moveRectangle6 {
+    0% {
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+    }
+    100% {
+        top: 0;
+        left: 100vw;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+#rect7 {
+    animation: moveRectangle7 3s forwards;
+}
+
+@keyframes moveRectangle7 {
+    0% {
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+    }
+    100% {
+        top: 0;
+        left: 100vw;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+#rect8 {
+    animation: moveRectangle8 3s forwards;
+}
+
+@keyframes moveRectangle8 {
+    0% {
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+    }
+    100% {
+        top: 0;
+        left: 100vw;
+        width: 100vw;
+        height: 100vh;
+    }
 }

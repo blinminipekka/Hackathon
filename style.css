@@ -73,6 +73,21 @@ body {
     }
 }
 
+  /* This assumes the chatbot widget has a specific class or ID. You may need to adjust this selector if your chatbot widget class or ID differs */
+
+/* #chat-widget-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 20vw; /* 40% of viewport width */
+      /* max-width: 50%; Ensures it doesn’t exceed the screen width */
+      /* transform: translate(-50%, -50%); */
+      /* z-index: 9999; */
+  /* } */
+
+
+
+
 /* Specific directions for each rectangle (same as before) */
 #rect1 {
     animation: moveRectangle1 3s forwards;

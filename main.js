@@ -58,6 +58,41 @@ function createRectangles() {
     });
 }
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Function to apply styles to the chatbot container
+    const applyChatbotStyles = () => {
+        const chatbotContainer = document.getElementById('chat-widget-container');
+        if (chatbotContainer) {
+            chatbotContainer.style.width = '90vw';
+            chatbotContainer.style.height = '40vw';
+            chatbotContainer.style.maxWidth = '100%';
+            chatbotContainer.style.position = 'fixed';
+            chatbotContainer.style.top = '58.8%';
+            chatbotContainer.style.left = '50%';
+            chatbotContainer.style.transform = 'translate(-50%, -50%)';
+            chatbotContainer.style.zIndex = '9999';
+        }
+    };
+
+    // Apply styles initially in case the widget is already loaded
+    applyChatbotStyles();
+
+    // Set up a MutationObserver to watch for changes in the DOM
+    const observer = new MutationObserver(() => applyChatbotStyles());
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Get the button using its aria-label attribute and add a click event listener
+    const openWidgetButton = document.querySelector('button[aria-label="Launch OpenWidget widget"]');
+    if (openWidgetButton) {
+        openWidgetButton.addEventListener('click', () => {
+            // Apply styles to the widget when the button is clicked
+            setTimeout(applyChatbotStyles, 1000); // Slight delay to ensure the widget is fully open
+        });
+    }
+});
+
+
 function createSprite() {
     sprite = document.createElement("img");
     sprite.src = "images/idle.png";  // Initially set to "idle.png"
@@ -93,6 +128,11 @@ function createConfinedMovingSprite(src, className, initialX, initialY) {
     element.style.position = "absolute";
     element.style.left = `${initialX}px`;
     element.style.top = `${initialY}px`;
+    
+    // Set smaller dimensions for these sprites
+    element.style.width = "100px";
+    element.style.height = "100px";
+    
     document.body.appendChild(element);
 
     // Set up movement direction
@@ -105,10 +145,10 @@ function createConfinedMovingSprite(src, className, initialX, initialY) {
         let currentY = parseFloat(element.style.top);
 
         // Check bounds and reverse direction if the element hits an edge
-        if (currentX <= 0 || currentX + spriteWidth >= window.innerWidth) {
+        if (currentX <= 0 || currentX + parseFloat(element.style.width) >= window.innerWidth) {
             directionX = -directionX;  // Reverse horizontal direction
         }
-        if (currentY <= 0 || currentY + spriteHeight >= window.innerHeight) {
+        if (currentY <= 0 || currentY + parseFloat(element.style.height) >= window.innerHeight) {
             directionY = -directionY;  // Reverse vertical direction
         }
 
